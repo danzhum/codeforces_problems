@@ -1,6 +1,3 @@
-def calculate_energy(p1, p2):
-    return p2-p1
-
 def solution(num_intersections, shortcuts):
 
     if num_intersections == 1:
@@ -14,10 +11,10 @@ def solution(num_intersections, shortcuts):
     q.append(0)
 
     while len(q) > 0:
-        print("Before q", q)
+        #print("Before q", q)
         k = q[0]
         q = q[1:]
-        print("After q", q)
+        #print("After q", q)
 
         if k+1 <= num_intersections-1 and distances[k+1] == -1:
             distances[k+1] = distances[k]+1
@@ -52,19 +49,19 @@ while True:
     if len(inputData) == 2:
         break
 
-print(inputData)
+#print(inputData)
 
-print("Done")
+#print("Done")
 N = int(inputData[0])
 shortCuts = []
 
 for i in inputData[1]:
     if i != " ":
         shortCuts.append(int(i)-1)
-print(shortCuts)
-print(solution(N, shortCuts))
+#print(shortCuts)
+#print(solution(N, shortCuts))
 
 output = solution(N, shortCuts)
-print("Output: ", output)
+#print("Output: ", output)
 for s in output:
     print(s)
